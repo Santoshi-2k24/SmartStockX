@@ -10,7 +10,7 @@ https://docs.djangoproject.com/en/5.2/howto/deployment/wsgi/
 import os
 
 from django.core.wsgi import get_wsgi_application
-
+sys.path.append(os.path.join(os.path.dirname(os.path.dirname(__file__)), 'SmartStockX'))
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'SmartStockX.settings')
 
 application = get_wsgi_application()
