@@ -33,7 +33,7 @@ load_dotenv(dotenv_path=Path(__file__).resolve().parent.parent.parent / '.env')
 
 SECRET_KEY = os.getenv('SECRET_KEY')
 DEBUG = os.getenv('DEBUG', 'False') == 'True'
-ALLOWED_HOSTS = [os.getenv('ALLOWED_HOSTS')]
+ALLOWED_HOSTS = ['*']
 
 DATABASES = {
     'default': dj_database_url.config(default=os.getenv('DATABASE_URL'))
@@ -42,8 +42,12 @@ DATABASES = {
 # SECURITY WARNING: don't run with debug turned on in production!
 
 
-CORS_ALLOW_ALL_ORIGINS = True
+#CORS_ALLOWED_ORIGINS = [
+#    "https://your-frontend-name.vercel.app",
+#]
 
+
+CORS_ALLOW_ALL_ORIGINS = True
 
 # Application definition
 
