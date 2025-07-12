@@ -10,7 +10,19 @@ https://docs.djangoproject.com/en/5.2/howto/deployment/wsgi/
 import os
 import sys
 from django.core.wsgi import get_wsgi_application
+
 sys.path.append(os.path.join(os.path.dirname(os.path.dirname(__file__)), 'SmartStockX'))
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'SmartStockX.settings')
 
 application = get_wsgi_application()
+
+
+try:
+    import django
+    from django.core.management import call_command
+
+    django.setup()
+    call_command('migrate')
+    print(" Migration completed successfully on Render startup.")
+except Exception as e:
+    print(f"⚠️ Migration failed during startup: {e}")
