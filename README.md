@@ -21,7 +21,7 @@ SmartStockX helps streamline stock inventory and restocking decisions by integra
 - Python, Django
 - PostgreSQL
 - React
-- Machine Learning (Scikit-Learn, Pandas)
+- Machine Learning (Random forest)
 - Vercel (Frontend Hosting)
 - Render (Backend Hosting)
 
